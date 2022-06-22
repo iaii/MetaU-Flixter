@@ -27,17 +27,6 @@
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     [self fetchMovies];
-    
-    UICollectionViewFlowLayout *layout = self.collectionView.collectionViewLayout;
-    
-    layout.minimumInteritemSpacing = 5;
-    layout.minimumLineSpacing = 5;
-    
-    CGFloat postersPerLine = 3;
-    CGFloat posterWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing * (postersPerLine - 1)) / postersPerLine;
-    CGFloat posterHeight = posterWidth * 1.5;
-    layout.itemSize = CGSizeMake(posterWidth, posterHeight);
-    
 }
 
 - (CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
